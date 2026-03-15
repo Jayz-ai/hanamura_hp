@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iTunes演歌ランキング第2位獲得！18歳のグラビア×サイバー演歌歌手「花村 紅（はなむら べに）」のアーティスト公式サイト。">
+    <title>花村 紅 (Beni Hanamura) | Official Website</title>
+    
+    <!-- Favicon & Web App Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 白いシルクのような流れる背景と、花びらを降らせるキャンバス -->
+    <div class="silk-background"></div>
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-jp">花村 紅</span>
+            <span class="logo-en">BENI HANAMURA</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#hero">TOP</a></li>
+                <li><a href="#profile">PROFILE</a></li>
+                <li><a href="#music">MUSIC</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        
+        <!-- Hero Section (Parallax) -->
+        <section id="hero" class="hero section parallax-container">
+            <!-- 遠景レイヤー -->
+            <div class="parallax-layer parallax-base">
+                <div class="hero-bg" style="background-image: url('images/beni_hanamura_KV.jpg');"></div>
+            </div>
+            
+            <!-- 近景レイヤー（テキスト・装飾） -->
+            <div class="parallax-layer parallax-fg">
+                <div class="hero-content">
+                    <div class="badge-container">
+                        <div class="award-badge">
+                            <span class="badge-text-small">iTunes 日本ランキング</span>
+                            <span class="badge-text-large">演歌部門 第2位</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <div class="title-catch">和風セクシー × サイバーパンク</div>
+                        <div class="title-main">サイバー演歌<br>ブレイクダウン！</div>
+                    </h1>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <span class="scroll-text">SCROLL</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="profile section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">人物</span>
+                    <span class="title-en">PROFILE</span>
+                </h2>
+                
+                <div class="profile-grid">
+                    <div class="profile-image-col">
+                        <div class="profile-image-wrapper image-frame">
+                            <img src="images/beni_hanamura_KVV.jpg" alt="花村紅 プロフィール">
+                        </div>
+                    </div>
+                    <div class="profile-text-col">
+                        <h3 class="profile-name">花村 紅 <span class="name-ruby">Hanamura Beni</span></h3>
+                        <p class="profile-age">Age: 18</p>
+                        <p class="profile-desc">
+                            18歳のサイバー演歌歌手。<br>
+                            グラビアアイドルとしての魅力と、力強い演歌の歌唱力を併せ持つ「二刀流」。<br>
+                            清楚で上品な顔立ちに、息を呑むようなプロポーション。<br>
+                            伝統的な白無垢のような和装の下に真紅のビキニを纏い、常識を打ち破るパフォーマンスでファンを魅了する。
+                        </p>
+                        
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <span class="detail-label">魅力</span>
+                                <span class="detail-value">和風清楚 × グラマラス</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ジャンル</span>
+                                <span class="detail-value">サイバー演歌 (Cyber Enka)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="music section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">楽曲</span>
+                    <span class="title-en">MUSIC & VIDEO</span>
+                </h2>
+                
+                <div class="music-content">
+                    <div class="music-jacket image-frame">
+                        <img src="images/花村紅_カバーアート.jpg" alt="紅の恋路 カバーアート">
+                    </div>
+                    
+                    <div class="music-info">
+                        <h3 class="song-title">紅の恋路</h3>
+                        <p class="song-subtitle">Kurenai no Koiji</p>
+                        
+                        <div class="lyrics-excerpt">
+                            <p>夏の夜空に 咲く花火</p>
+                            <p>私の想い 届けたいの</p>
+                            <p>燃えるような 紅の恋路</p>
+                            <p class="highlight-lyric">CYBER ENKA BREAK DOWN！</p>
+                        </div>
+                        
+                        <!-- 簡易Audio Player -->
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="audio/【BPM136】紅の恋路【サイバー演歌】.wav" type="audio/wav">
+                                お使いのブラウザは音声再生に対応していません。
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">画廊</span>
+                    <span class="title-en">GALLERY</span>
+                </h2>
+                
+                <div class="gallery-grid">
+                    <!-- 画像は後ほどJSや追加のCSSでリッチに並べます -->
+                    <div class="gallery-item image-frame"><img src="images/beni_image.jpg" alt="Gallery 1"></div>
+                    <div class="gallery-item image-frame"><img src="images/20251130-6a84ac0bdb574df5b7b4533f1035a71f-attachment.png" alt="Gallery 2"></div>
+                    <div class="gallery-item image-frame"><img src="images/20250920-e6f3b7de23f6498a9de513fbcf9ce002-attachment.jpg" alt="Gallery 3"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">花村 紅</div>
+            <p class="copyright">&copy; 2026 Beni Hanamura Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
