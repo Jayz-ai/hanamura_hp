@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // .main-contentのスクロールイベントを監視（パララックスラッパーのため）
     const mainContent = document.querySelector('.main-content');
     
-    mainContent.addEventListener('scroll', () => {
-        if (mainContent.scrollTop > 50) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
