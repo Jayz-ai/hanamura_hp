@@ -3,32 +3,57 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 0d2f5ad8d2b1d5a3c887e4453b124f08822ef005
     // ==========================================
     // ヘッダースクロール時のスタイル変更
     // ==========================================
     const header = document.querySelector('.header');
+<<<<<<< HEAD
 
     // .main-contentのスクロールイベントを監視（パララックスラッパーのため）
     const mainContent = document.querySelector('.main-content');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
+=======
+    
+    // .main-contentのスクロールイベントを監視（パララックスラッパーのため）
+    const mainContent = document.querySelector('.main-content');
+    
+    mainContent.addEventListener('scroll', () => {
+        if (mainContent.scrollTop > 50) {
+>>>>>>> 0d2f5ad8d2b1d5a3c887e4453b124f08822ef005
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 0d2f5ad8d2b1d5a3c887e4453b124f08822ef005
         // ==========================================
         // Scroll Reveal Animation
         // ==========================================
         const revealElements = document.querySelectorAll('.reveal-on-scroll');
         const windowHeight = window.innerHeight;
+<<<<<<< HEAD
 
         revealElements.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
             const revealPoint = 150;
 
+=======
+        
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const revealPoint = 150;
+            
+>>>>>>> 0d2f5ad8d2b1d5a3c887e4453b124f08822ef005
             if (elementTop < windowHeight - revealPoint) {
                 el.classList.add('is-visible');
             }
@@ -55,8 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+<<<<<<< HEAD
             if (targetId === '#') return;
 
+=======
+            if(targetId === '#') return;
+            
+>>>>>>> 0d2f5ad8d2b1d5a3c887e4453b124f08822ef005
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // 通常のbodyスクロールではなく、パララックスラッパー内のスクロール
@@ -67,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+<<<<<<< HEAD
 
     // ==========================================
     // グッズサムネイル ランダム表示
@@ -89,4 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
         randomImg.alt = `グッズサンプル${randomNum}`;
     }
 
+=======
+>>>>>>> 0d2f5ad8d2b1d5a3c887e4453b124f08822ef005
 });
