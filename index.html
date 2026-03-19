@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iTunes演歌ランキング第2位獲得！18歳のグラビア×サイバー演歌歌手「花村 紅（はなむら べに）」のアーティスト公式サイト。">
+    <title>花村 紅 (Beni Hanamura) | Official Website</title>
+
+    <!-- Favicon & Web App Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 白いシルクのような流れる背景と、花びらを降らせるキャンバス -->
+    <div class="silk-background"></div>
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-jp">花村 紅</span>
+            <span class="logo-en">BENI HANAMURA</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#hero">TOP</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#profile">PROFILE</a></li>
+                <li><a href="#music">MUSIC</a></li>
+                <li><a href="#goods">GOODS</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+
+        <!-- Hero Section (Parallax) -->
+        <section id="hero" class="hero section parallax-container">
+            <!-- 遠景レイヤー -->
+            <div class="parallax-layer parallax-base">
+                <div class="hero-bg" style="background-image: url('../【fullMV】紅の恋路/beni_hanamura_KV.jpg');"></div>
+            </div>
+
+            <!-- 近景レイヤー（テキスト・装飾） -->
+            <div class="parallax-layer parallax-fg">
+                <div class="hero-content">
+                    <div class="badge-container">
+                        <div class="award-badge">
+                            <span class="badge-text-small">iTunes 日本ランキング</span>
+                            <span class="badge-text-large">演歌部門 第2位</span>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <div class="title-catch">和風セクシー × サイバーパンク</div>
+                        <div class="title-main">サイバー演歌<br>ブレイクダウン！</div>
+                    </h1>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span class="scroll-text">SCROLL</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">最新情報</span>
+                    <span class="title-en">NEWS</span>
+                </h2>
+                <div class="news-container">
+                    <div class="news-item">
+                        <div class="news-date">2026.03.20</div>
+                        <div class="news-content">
+                            <h3>新曲「紅の恋路」MV公開！</h3>
+                            <p>サイバー演歌の新境地！MVがYouTubeで公開されました。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2026.03.15</div>
+                        <div class="news-content">
+                            <h3>iTunes演歌ランキング第2位獲得！</h3>
+                            <p>皆様のご支援のおかげで、iTunes演歌ランキングで第2位を獲得しました！</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">2026.03.10</div>
+                        <div class="news-content">
+                            <h3>公式グッズ販売開始</h3>
+                            <p>SUZURIにて公式グッズの販売を開始しました。ぜひチェックしてください！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="profile section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">人物</span>
+                    <span class="title-en">PROFILE</span>
+                </h2>
+
+                <div class="profile-grid">
+                    <div class="profile-image-col">
+                        <div class="profile-image-wrapper image-frame">
+                            <img src="images/gallery/profile.png" alt="花村紅 プロフィール">
+                        </div>
+                    </div>
+                    <div class="profile-text-col">
+                        <h3 class="profile-name">花村 紅 <span class="name-ruby">Hanamura Beni</span></h3>
+                        <p class="profile-age">Age: 18</p>
+                        <p class="profile-desc">
+                            18歳のサイバー演歌歌手。<br>
+                            グラビアアイドルとしての魅力と、力強い演歌の歌唱力を併せ持つ「二刀流」。<br>
+                            清楚で上品な顔立ちに、息を呑むようなプロポーション。<br>
+                            伝統的な白無垢のような和装の下に真紅のビキニを纏い、常識を打ち破るパフォーマンスでファンを魅了する。
+                        </p>
+
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <span class="detail-label">魅力</span>
+                                <span class="detail-value">和風清楚 × グラマラス</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ジャンル</span>
+                                <span class="detail-value">サイバー演歌 (Cyber Enka)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="music section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">楽曲</span>
+                    <span class="title-en">MUSIC & VIDEO</span>
+                </h2>
+
+                <div class="music-content" style="display: block; text-align: center;">
+                    <div class="music-info" style="max-width: 800px; margin: 0 auto;">
+                        <h3 class="song-title">紅の恋路</h3>
+                        <p class="song-subtitle">Beni no Koiji</p>
+
+                        <div class="lyrics-excerpt">
+                            <p>紅の恋路よ 夢のよう</p>
+                            <p>ちはやふる この想い</p>
+                            <br>
+                            <p class="highlight-lyric">CYBER ENKA BREAK DOWN !</p>
+                        </div>
+
+                        <!-- MV 動画プレイヤー -->
+                        <div class="video-player" style="margin-bottom: 20px;">
+                            <video controls width="100%"
+                                style="border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                                <source src="images/MVclip/紅の恋路_websiteカット.mp4" type="video/mp4">
+                                お使いのブラウザは動画再生に対応していません。
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goods Section -->
+        <section id="goods" class="goods section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">グッズ</span>
+                    <span class="title-en">GOODS</span>
+                </h2>
+
+                <!-- グッズ枠 -->
+                <div class="goods-frame">
+                    <p class="goods-frame-lead">花村紅のオリジナルグッズ、SUZURIにて販売中！</p>
+
+                    <!-- サムネイル2枚 -->
+                    <div class="goods-thumbs">
+                        <!-- goods01.png は固定表示 -->
+                        <a href="https://suzuri.jp/HanamuraBeni/products" target="_blank" rel="noopener noreferrer"
+                            class="goods-thumb-item">
+                            <img src="images/goods/goods01.png" alt="グッズサンプル1">
+                        </a>
+                        <!-- goods02.png以降からJSでランダム表示 -->
+                        <a href="https://suzuri.jp/HanamuraBeni/products" target="_blank" rel="noopener noreferrer"
+                            class="goods-thumb-item" id="goods-random-thumb">
+                            <img id="goods-random-img" src="" alt="グッズサンプル（ランダム）">
+                        </a>
+                    </div>
+
+                    <a href="https://suzuri.jp/HanamuraBeni/products" target="_blank" rel="noopener noreferrer"
+                        class="goods-link-btn">
+                        グッズショップを見る
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">画廊</span>
+                    <span class="title-en">GALLERY</span>
+                </h2>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item image-frame"><img src="images/gallery/beni_hanamura_KV.png"
+                            alt="Gallery 1">
+                    </div>
+                    <div class="gallery-item image-frame"><img
+                            src="images/gallery/27ce94fa-226f-4bb5-ab47-db0550fc2431.png" alt="Gallery 2"></div>
+                    <div class="gallery-item image-frame"><img
+                            src="images/gallery/20251220-1446f512e84c430486079948dac7f03f-attachment.png"
+                            alt="Gallery 3"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gemini3pro_lookback.png"
+                            alt="Gallery 4">
+                    </div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/Snapshot_10.PNG" alt="Gallery 5">
+                    </div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/Snapshot_12.PNG" alt="Gallery 6">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">花村 紅</div>
+            <div class="social-icons">
+                <a href="https://x.com/BeniHanaCyber" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <img src="images/icon/X3tr.png" alt="X"
+                        style="width: 28px; height: 28px; background: #242424; display: block;">
+                </a>
+                <a href="https://www.youtube.com/@BeniHanamura.official" target="_blank" rel="noopener noreferrer"
+                    class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.017 3.017 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Beni Hanamura Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
