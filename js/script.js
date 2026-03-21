@@ -67,4 +67,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ==========================================
+    // グッズ画像のランダム表示処理
+    // ==========================================
+    const randomGoodsImg = document.getElementById('random-goods-img');
+    if (randomGoodsImg) {
+        // 画像が存在するかチェックする関数
+        const checkImageExists = (url) => {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = url;
+            });
+        };
+
+        const setupRandomGoods = async () => {
+            let availableIndexes = [];
+            // goods01.png は左側固定なので、右側は02以降を探す
+            let checkIndex = 2;
+            let keepChecking = true;
+
+            // 最大50個まで探す(無限ループ防止)
+            while (keepChecking && checkIndex <= 50) {
+                const numStr = checkIndex.toString().padStart(2, '0');
+                const url = `images/goods/goods${numStr}.png`;
+                const exists = await checkImageExists(url);
+                if (exists) {
+                    availableIndexes.push(numStr);
+                    checkIndex++;
+                } else {
+                    keepChecking = false; // 連番が途切れたら探索終了
+                }
+            }
+
+            if (availableIndexes.length > 0) {
+                // ランダムに1つ選定
+                const randomIdx = Math.floor(Math.random() * availableIndexes.length);
+                const selectedNum = availableIndexes[randomIdx];
+                
+                // フワッと切り替えるためのスタイル処理を含める
+                randomGoodsImg.style.transition = 'opacity 0.3s ease';
+                randomGoodsImg.style.opacity = 0;
+                
+                setTimeout(() => {
+                    randomGoodsImg.src = `images/goods/goods${selectedNum}.png`;
+                    randomGoodsImg.onload = () => {
+                        randomGoodsImg.style.opacity = 1;
+                    };
+                }, 300);
+            }
+        };
+
+        setupRandomGoods();
+    }
+
 });

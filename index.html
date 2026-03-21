@@ -36,6 +36,7 @@
                 <li><a href="#hero">TOP</a></li>
                 <li><a href="#profile">PROFILE</a></li>
                 <li><a href="#music">MUSIC</a></li>
+                <li><a href="#goods">GOODS</a></li>
                 <li><a href="#gallery">GALLERY</a></li>
             </ul>
         </nav>
@@ -60,11 +61,6 @@
                             <span class="badge-text-large">演歌部門 第2位</span>
                         </div>
                     </div>
-                    
-                    <h1 class="hero-title">
-                        <div class="title-catch">和風セクシー × サイバーパンク</div>
-                        <div class="title-main">サイバー演歌<br>ブレイクダウン！</div>
-                    </h1>
                 </div>
                 
                 <div class="scroll-indicator">
@@ -85,7 +81,7 @@
                 <div class="profile-grid">
                     <div class="profile-image-col">
                         <div class="profile-image-wrapper image-frame">
-                            <img src="images/beni_hanamura_KVV.jpg" alt="花村紅 プロフィール">
+                            <img src="images/profile/profile.webp" alt="花村紅 プロフィール">
                         </div>
                     </div>
                     <div class="profile-text-col">
@@ -122,28 +118,66 @@
                 </h2>
                 
                 <div class="music-content">
-                    <div class="music-jacket image-frame">
-                        <img src="images/花村紅_カバーアート.jpg" alt="紅の恋路 カバーアート">
-                    </div>
-                    
                     <div class="music-info">
                         <h3 class="song-title">紅の恋路</h3>
-                        <p class="song-subtitle">Kurenai no Koiji</p>
+                        <p class="song-subtitle">Beni no Koiji</p>
                         
                         <div class="lyrics-excerpt">
-                            <p>夏の夜空に 咲く花火</p>
-                            <p>私の想い 届けたいの</p>
-                            <p>燃えるような 紅の恋路</p>
-                            <p class="highlight-lyric">CYBER ENKA BREAK DOWN！</p>
+                            <p>紅の恋路よ　夢のよう</p>
+                            <p>ちはやふる　このおもい</p>
+                            <p>からくれないに　染め上げて</p>
+                            <p>ああ　こぶし震わせ</p>
+                            <p>あなたの名を呼ぶ</p>
                         </div>
                         
-                        <!-- 簡易Audio Player -->
-                        <div class="audio-player">
-                            <audio controls>
-                                <source src="audio/【BPM136】紅の恋路【サイバー演歌】.wav" type="audio/wav">
-                                お使いのブラウザは音声再生に対応していません。
-                            </audio>
+                        <!-- ミュージックビデオ プレイヤー -->
+                        <div class="mv-player">
+                            <h3 class="mv-title">
+                                <span class="mv-title-icon">▶</span> Music Video
+                            </h3>
+                            <div class="mv-video-wrapper image-frame">
+                                <video controls preload="metadata" poster="images/花村紅_カバーアート.jpg">
+                                    <source src="images/MVclip/紅の恋路_websiteカット.mp4" type="video/mp4">
+                                    お使いのブラウザは動画再生に対応していません。
+                                </video>
+                            </div>
+                            <div class="mv-link-container">
+                                <a href="https://youtu.be/q2kTGpISqZs?si=18GpAZIlK-Ahq6RA" target="_blank" rel="noopener noreferrer" class="youtube-mv-link">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.084 0 12 0 12s0 3.916.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.916 24 12 24 12s0-3.916-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                                    </svg>
+                                    <span>イメージムービーをYouTubeで見る</span>
+                                </a>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goods Section -->
+        <section id="goods" class="goods section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">公式物販</span>
+                    <span class="title-en">GOODS</span>
+                </h2>
+                
+                <div class="goods-content">
+                    <a href="https://suzuri.jp/HanamuraBeni" target="_blank" rel="noopener noreferrer" class="goods-link-wrapper image-frame">
+                        <div class="goods-images">
+                            <div class="goods-img-col">
+                                <img src="images/goods/goods01.png" alt="グッズ固定">
+                            </div>
+                            <div class="goods-img-col">
+                                <img id="random-goods-img" src="images/goods/goods02.png" alt="グッズランダム">
+                            </div>
+                        </div>
+                    </a>
+                    <div class="goods-button-container">
+                        <a href="https://suzuri.jp/HanamuraBeni" target="_blank" rel="noopener noreferrer" class="btn-goods">
+                            ONLINE SHOPへ ▶
+                        </a>
                     </div>
                 </div>
             </div>
@@ -158,10 +192,12 @@
                 </h2>
                 
                 <div class="gallery-grid">
-                    <!-- 画像は後ほどJSや追加のCSSでリッチに並べます -->
-                    <div class="gallery-item image-frame"><img src="images/beni_image.jpg" alt="Gallery 1"></div>
-                    <div class="gallery-item image-frame"><img src="images/20251130-6a84ac0bdb574df5b7b4533f1035a71f-attachment.png" alt="Gallery 2"></div>
-                    <div class="gallery-item image-frame"><img src="images/20250920-e6f3b7de23f6498a9de513fbcf9ce002-attachment.jpg" alt="Gallery 3"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery_01.webp" alt="Gallery 1"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery02.webp" alt="Gallery 2"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery03.webp" alt="Gallery 3"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery04.webp" alt="Gallery 4"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery05.webp" alt="Gallery 5"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery06.webp" alt="Gallery 6"></div>
                 </div>
             </div>
         </section>
@@ -172,6 +208,21 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">花村 紅</div>
+            
+            <!-- SNS Links -->
+            <div class="footer-socials">
+                <a href="https://x.com/BeniHanaCyber" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@BeniHanamura.official" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.084 0 12 0 12s0 3.916.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.916 24 12 24 12s0-3.916-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                    </svg>
+                </a>
+            </div>
+
             <p class="copyright">&copy; 2026 Beni Hanamura Project. All rights reserved.</p>
         </div>
     </footer>

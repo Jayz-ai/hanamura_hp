@@ -81,8 +81,8 @@ body {
 }
 
 .section {
-    padding: 100px 0;
-    min-height: 100vh;
+    padding: 50px 0;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -309,10 +309,10 @@ h1, h2, h3, h4 {
     display: inline-flex;
     flex-direction: column;
     background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    border: 2px solid var(--color-gold);
-    padding: 10px 30px;
-    border-radius: 5px;
-    box-shadow: 0 10px 20px rgba(197, 168, 103, 0.2);
+    border: 3px solid var(--color-gold);
+    padding: 20px 50px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(197, 168, 103, 0.4);
     position: relative;
     overflow: hidden;
 }
@@ -329,14 +329,14 @@ h1, h2, h3, h4 {
 }
 
 .badge-text-small {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-text-sub);
     letter-spacing: 0.1em;
 }
 
 .badge-text-large {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
     font-weight: 900;
     color: var(--color-botan-red);
     letter-spacing: 0.05em;
@@ -501,22 +501,16 @@ h1, h2, h3, h4 {
    Music Section
 ================================== */
 .music-content {
-    display: flex;
-    gap: 60px;
     background: rgba(255,255,255,0.6);
     padding: 60px;
     border-radius: 4px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.03);
     backdrop-filter: blur(10px);
-}
-
-.music-jacket {
-    flex: 0 0 400px;
-    aspect-ratio: 1/1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .music-info {
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -525,6 +519,7 @@ h1, h2, h3, h4 {
 .song-title {
     font-size: 2.2rem;
     color: var(--color-text-main);
+    text-align: center;
 }
 
 .song-subtitle {
@@ -533,6 +528,7 @@ h1, h2, h3, h4 {
     color: var(--color-text-sub);
     letter-spacing: 0.1em;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .lyrics-excerpt {
@@ -540,8 +536,10 @@ h1, h2, h3, h4 {
     line-height: 2.2;
     margin-bottom: 40px;
     position: relative;
-    padding-left: 30px;
-    border-left: 2px solid rgba(181, 19, 34, 0.2);
+    /* 歌詞ブロック自体を中央寄せ配置 */
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .highlight-lyric {
@@ -552,14 +550,146 @@ h1, h2, h3, h4 {
     margin-top: 15px;
 }
 
-.audio-player {
-    margin-top: auto;
+/* ミュージックビデオ プレイヤー */
+.mv-player {
+    margin-top: 40px;
 }
 
-audio {
+.mv-title {
+    font-size: 1.4rem;
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mv-title-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--color-botan-red), var(--color-botan-pink));
+    color: #fff;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.mv-video-wrapper {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.mv-video-wrapper:hover {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+.mv-video-wrapper video {
     width: 100%;
-    height: 40px;
-    outline: none;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mv-link-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.youtube-mv-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-botan-red);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: var(--transition-smooth);
+    background: rgba(181, 19, 34, 0.05);
+}
+
+.youtube-mv-link:hover {
+    background: var(--color-botan-red);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(181, 19, 34, 0.2);
+}
+
+/* ==================================
+   Goods Section
+================================== */
+.goods-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.goods-link-wrapper {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.goods-link-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+.goods-images {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 10px;
+}
+
+.goods-img-col {
+    flex: 1;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.goods-img-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fdfdfd;
+    transition: var(--transition-smooth);
+}
+
+.goods-link-wrapper:hover .goods-img-col img {
+    transform: scale(1.05);
+}
+
+.goods-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-goods {
+    display: inline-block;
+    padding: 15px 50px;
+    background: linear-gradient(135deg, var(--color-botan-red), var(--color-botan-pink));
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(181, 19, 34, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.btn-goods:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(181, 19, 34, 0.4);
+    color: #fff;
 }
 
 /* ==================================
@@ -628,6 +758,30 @@ audio {
     letter-spacing: 0.1em;
 }
 
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: var(--transition-smooth);
+}
+
+.social-icon:hover {
+    background: var(--color-botan-red);
+    transform: translateY(-3px);
+}
+
 .copyright {
     font-family: var(--font-cyber);
     font-size: 0.8rem;
@@ -652,15 +806,6 @@ audio {
 @media screen and (max-width: 992px) {
     .profile-grid {
         grid-template-columns: 1fr;
-    }
-    .music-content {
-        flex-direction: column;
-    }
-    .music-jacket {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
     }
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
