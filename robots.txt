@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jayz-ai.github.io/hanamura_hp/sitemap.xml
