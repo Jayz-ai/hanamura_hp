@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
     <!-- 白いシルクのような流れる背景と、花びらを降らせるキャンバス -->
@@ -47,6 +47,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="#hero">TOP</a></li>
+                <li><a href="#news">NEWS</a></li>
                 <li><a href="#profile">PROFILE</a></li>
                 <li><a href="#video">VIDEO</a></li>
                 <li><a href="#music">MUSIC</a></li>
@@ -82,6 +83,56 @@
                 <div class="scroll-indicator">
                     <span class="scroll-text">SCROLL</span>
                     <div class="scroll-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">最新情報</span>
+                    <span class="title-en">NEWS</span>
+                </h2>
+                
+                <div class="news-list">
+                    <!-- NEWS_START -->
+
+                    <!-- 記事 news-3 -->
+                    <article class="news-item" data-id="news-3">
+                        <div class="news-date">2026.03.22</div>
+                        <h3 class="news-title">公式サイトオープンのお知らせ</h3>
+                        <!-- モーダル展開用の詳細データ (非表示) -->
+                        <div class="news-detail-content" style="display: none;">
+                            <div class="news-modal-date">2026.03.22</div>
+                            <h3 class="news-modal-title">公式サイトオープンのお知らせ</h3>
+                            <div class="news-modal-body">
+                                <img src="images/beni_hanamura_KV.jpg" alt="image" class="news-modal-image"><br>
+花村紅の公式サイトをオープンいたしました！<br><br>
+最新情報や限定コンテンツを皆様にお届けしていきます。<br><br>
+今後とも花村紅の応援をよろしくお願いいたします。
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 記事 news-2 -->
+                    <article class="news-item" data-id="news-2">
+                        <div class="news-date">2025.10.17</div>
+                        <h3 class="news-title">デビュー曲『紅の恋路』が各種ストリーミング配信開始</h3>
+                        <!-- モーダル展開用の詳細データ (非表示) -->
+                        <div class="news-detail-content" style="display: none;">
+                            <div class="news-modal-date">2025.10.17</div>
+                            <h3 class="news-modal-title">デビュー曲『紅の恋路』が各種ストリーミング配信開始</h3>
+                            <div class="news-modal-body">
+                                グラビアアイドル×サイバー演歌の鮮烈なデビュー曲『紅の恋路』がSpotify, Apple Musicをはじめとする各種ストリーミングサービスで配信開始されました。<br><br>
+力強いビートと哀愁漂うコブシの融合をぜひお楽しみください。<br>
+<br>
+配信リンクはこちら：<br><br>
+<a href="https://example.com/music" target="_blank" rel="noopener noreferrer">https://example.com/music</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- NEWS_END -->
                 </div>
             </div>
         </section>
@@ -271,9 +322,20 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- フット・スクリプト類 -->
     <script src="js/particles.js"></script>
     <script src="js/script.js"></script>
+
+    <!-- News Modal -->
+    <div id="news-modal" class="news-modal">
+        <div class="news-modal-overlay"></div>
+        <div class="news-modal-content image-frame">
+            <button class="news-modal-close" aria-label="閉じる">&times;</button>
+            <div id="news-modal-inner" class="news-modal-inner">
+                <!-- コンテンツはJSで動的に挿入されます -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

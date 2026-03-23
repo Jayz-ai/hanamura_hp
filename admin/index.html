@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花村紅 NEWS管理ツール</title>
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="/admin/style.css">
+</head>
+<body>
+    <div id="app" class="admin-container" v-cloak>
+        <header class="admin-header">
+            <h1>NEWS 管理ツール</h1>
+            <div class="header-actions">
+                <a href="/preview" target="_blank" class="btn btn-outline">プレビューを開く</a>
+                <button @click="deployToProduction" class="btn btn-primary" :disabled="isDeploying">
+                    {{ isDeploying ? 'デプロイ中...' : '本番へ反映する (Deploy)' }}
+                </button>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <!-- Sidebar for Tabs -->
+            <aside class="admin-sidebar">
+                <button :class="['tab-btn', { active: currentTab === 'public' }]" @click="currentTab = 'public'">
+                    公開中 / 準備中
+                </button>
+                <button :class="['tab-btn', { active: currentTab === 'archive' }]" @click="currentTab = 'archive'">
+                    アーカイブ
+                </button>
+                <div class="sidebar-divider"></div>
+                <button class="btn btn-success" @click="createNewArticle">＋ 新規記事作成</button>
+            </aside>
+
+            <!-- List Area -->
+            <section class="admin-content">
+                <div v-if="filteredNews.length === 0" class="empty-state">
+                    記事がありません。
+                </div>
+                
+                <div v-for="(item, index) in filteredNews" :key="item.id" class="news-card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge" :class="item.status === 'public' ? 'badge-public' : (item.status === 'archive' ? 'badge-archive' : 'badge-hidden')">
+                                {{ getStatusLabel(item.status) }}
+                            </span>
+                        </div>
+                        <div class="card-actions">
+                            <!-- 順番入れ替え (非表示中の記事やアーカイブでは無効化などを考慮) -->
+                            <button @click="moveUp(index)" :disabled="index === 0" class="icon-btn">↑</button>
+                            <button @click="moveDown(index)" :disabled="index === filteredNews.length - 1" class="icon-btn">↓</button>
+                            <button @click="editArticle(item)" class="btn btn-outline btn-sm">編集</button>
+                            <button @click="toggleArchive(item)" class="btn btn-outline btn-sm">
+                                {{ item.status === 'archive' ? 'アーカイブ解除' : 'アーカイブ' }}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="news-date">{{ item.date }}</div>
+                        <h3 class="news-title">{{ item.title }}</h3>
+                        <div class="news-preview">{{ truncateText(item.content, 100) }}</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Edit Modal -->
+        <div v-if="editingItem" class="modal-overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>{{ editingItem.id ? '記事の編集' : '新規記事作成' }}</h2>
+                    <button class="close-btn" @click="cancelEdit">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>ステータス</label>
+                        <select v-model="editingForm.status" class="form-control">
+                            <option value="public">公開</option>
+                            <option value="hidden">非公開</option>
+                            <option value="archive">アーカイブ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>日付</label>
+                        <input type="text" v-model="editingForm.date" placeholder="YYYY.MM.DD" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>見出し (タイトル)</label>
+                        <input type="text" v-model="editingForm.title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>本文</label>
+                        <p class="help-text">
+                            ※画像を入れたい行に <code>[IMAGE: gallery/gallery_01.webp]</code> のように記述してください。<br>
+                            ※リンクは <code>&lt;a href="URL" target="_blank"&gt;表示文字&lt;/a&gt;</code> と書くことで反映されます。
+                        </p>
+                        <textarea v-model="editingForm.content" class="form-control" rows="12"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" v-if="editingForm.id" @click="deleteArticle">削除</button>
+                    <div class="footer-right">
+                        <button class="btn btn-outline" @click="cancelEdit">キャンセル</button>
+                        <button class="btn btn-primary" @click="saveEdit">保存する</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/admin/app.js"></script>
+</body>
+</html>

@@ -159,4 +159,48 @@ document.addEventListener('DOMContentLoaded', () => {
         setupRandomGoods();
     }
 
+    // ==========================================
+    // NEWS モーダル処理
+    // ==========================================
+    const newsItems = document.querySelectorAll('.news-item');
+    const newsModal = document.getElementById('news-modal');
+    const newsModalOverlay = document.querySelector('.news-modal-overlay');
+    const newsModalClose = document.querySelector('.news-modal-close');
+    const newsModalInner = document.getElementById('news-modal-inner');
+
+    if (newsItems.length > 0 && newsModal) {
+        const closeModal = () => {
+            newsModal.classList.remove('is-active');
+            setTimeout(() => {
+                newsModal.style.display = 'none';
+                newsModalInner.innerHTML = ''; // クリア
+            }, 300); // transition時間に合わせる
+            document.body.style.overflow = ''; // スクロール復元
+        };
+
+        const openModal = (htmlContent) => {
+            newsModalInner.innerHTML = htmlContent;
+            newsModal.style.display = 'flex';
+            
+            // display flexが適用された後にアニメーション用クラス付与
+            setTimeout(() => {
+                newsModal.classList.add('is-active');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // 背景スクロール防止
+        };
+
+        newsItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const detailContent = item.querySelector('.news-detail-content');
+                if (detailContent) {
+                    openModal(detailContent.innerHTML);
+                }
+            });
+        });
+
+        // モーダルのオーバーレイ領域か閉じるボタンをクリックで閉じる
+        newsModalOverlay.addEventListener('click', closeModal);
+        newsModalClose.addEventListener('click', closeModal);
+    }
+
 });
