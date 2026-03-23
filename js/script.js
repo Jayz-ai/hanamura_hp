@@ -68,6 +68,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
+    // 音源販売画像のランダム表示処理
+    // ==========================================
+    const randomMusicImg1 = document.getElementById('random-music-img-1');
+    const randomMusicImg2 = document.getElementById('random-music-img-2');
+    
+    if (randomMusicImg1 && randomMusicImg2) {
+        // 画像リスト (music_01.jpg 〜 music_07.jpg)
+        const musicImages = [
+            'images/music_thmb/music_01.jpg',
+            'images/music_thmb/music_02.jpg',
+            'images/music_thmb/music_03.jpg',
+            'images/music_thmb/music_04.jpg',
+            'images/music_thmb/music_05.jpg',
+            'images/music_thmb/music_06.jpg',
+            'images/music_thmb/music_07.jpg'
+        ];
+        
+        // 重複しないように2つランダムに選択
+        const shuffled = [...musicImages].sort(() => 0.5 - Math.random());
+        const selectedImages = shuffled.slice(0, 2);
+        
+        // フワッと切り替えるためのスタイル処理
+        [randomMusicImg1, randomMusicImg2].forEach(img => {
+            img.style.transition = 'opacity 0.3s ease';
+            img.style.opacity = 0;
+        });
+        
+        setTimeout(() => {
+            randomMusicImg1.src = selectedImages[0];
+            randomMusicImg2.src = selectedImages[1];
+            
+            randomMusicImg1.onload = () => randomMusicImg1.style.opacity = 1;
+            randomMusicImg2.onload = () => randomMusicImg2.style.opacity = 1;
+        }, 300);
+    }
+
+    // ==========================================
     // グッズ画像のランダム表示処理
     // ==========================================
     const randomGoodsImg = document.getElementById('random-goods-img');
