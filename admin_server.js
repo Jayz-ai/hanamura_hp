@@ -103,12 +103,17 @@ const server = http.createServer((req, res) => {
         });
     } else {
         // 静的ファイルの配信
-        let filePath = req.url === '/' ? '/admin/index.html' : req.url;
+        // クエリパラメータを除去してパスだけにする (?v=2 など)
+        const parsedUrl = new URL(req.url, `http://localhost:${PORT}`);
+        let filePath = parsedUrl.pathname === '/' ? '/admin/index.html' : parsedUrl.pathname;
         
         // プレビュー用に /preview で元の index.html を配信
         if (filePath === '/preview') {
             filePath = '/index.html';
         }
+
+        // デコード（日本語ファイル名対応）
+        filePath = decodeURIComponent(filePath);
 
         const extname = String(path.extname(filePath)).toLowerCase();
         const mimeTypes = {
@@ -117,11 +122,17 @@ const server = http.createServer((req, res) => {
             '.css': 'text/css; charset=utf-8',
             '.json': 'application/json; charset=utf-8',
             '.png': 'image/png',
-            '.jpg': 'image/jpg',
-            '.jpeg': 'image/jpg',
+            '.jpg': 'image/jpeg',
+            '.jpeg': 'image/jpeg',
             '.gif': 'image/gif',
             '.webp': 'image/webp',
-            '.svg': 'image/svg+xml'
+            '.svg': 'image/svg+xml',
+            '.mp4': 'video/mp4',
+            '.webm': 'video/webm',
+            '.woff': 'font/woff',
+            '.woff2': 'font/woff2',
+            '.ttf': 'font/ttf',
+            '.ico': 'image/x-icon'
         };
 
         const contentType = mimeTypes[extname] || 'application/octet-stream';
