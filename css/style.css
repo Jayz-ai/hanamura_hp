@@ -685,6 +685,13 @@ h1, h2, h3, h4 {
     margin-top: 30px;
 }
 
+.official-music-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
 .btn-goods {
     display: inline-block;
     padding: 15px 50px;
@@ -697,6 +704,14 @@ h1, h2, h3, h4 {
     border-radius: 50px;
     box-shadow: 0 10px 25px rgba(181, 19, 34, 0.3);
     transition: var(--transition-smooth);
+}
+
+.official-music-links .btn-goods {
+    min-width: 220px;
+}
+
+.btn-linkcore {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-botan-red));
 }
 
 .btn-goods:hover {
@@ -751,7 +766,7 @@ h1, h2, h3, h4 {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../【fullMV】紅の恋路/beni_image.jpg');
+    background-image: url('../images/beni_image.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.1;
