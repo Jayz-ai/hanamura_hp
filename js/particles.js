@@ -3,11 +3,19 @@
  */
 
 const canvas = document.getElementById('petal-canvas');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!canvas || prefersReducedMotion) {
+    if (canvas) {
+        canvas.style.display = 'none';
+    }
+} else {
 const ctx = canvas.getContext('2d');
 
 let width, height;
 let particles = [];
-const particleCount = 40; // 花びらの数
+let particleCount = window.innerWidth <= 768 ? 18 : 40; // 花びらの数
+let animationFrameId = null;
 
 // 色のバリエーション（深紅〜ピンク）
 const colors = [
@@ -21,6 +29,7 @@ const colors = [
 function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+    particleCount = window.innerWidth <= 768 ? 18 : 40;
 }
 
 class Petal {
@@ -104,13 +113,32 @@ function animate() {
         p.draw();
     });
 
-    requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
 }
 
 window.addEventListener('resize', () => {
+    const nextCount = window.innerWidth <= 768 ? 18 : 40;
     resize();
+    if (nextCount !== particles.length) {
+        init();
+    }
+});
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+        return;
+    }
+
+    if (!animationFrameId) {
+        animate();
+    }
 });
 
 // 初期化とアニメーション開始
 init();
 animate();
+}

@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://jayz-ai.github.io/hanamura_hp/</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Cvyobrp3hOU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title><![CDATA[紅の恋路 Director's Cut Music Video]]></video:title>
+      <video:description><![CDATA[花村紅のデビュー曲「紅の恋路」Director's Cutのミュージックビデオ。]]></video:description>
+      <video:player_loc>https://www.youtube.com/embed/Cvyobrp3hOU</video:player_loc>
+      <video:duration>290</video:duration>
+      <video:publication_date>2026-04-03</video:publication_date>
+      <video:tag>花村紅</video:tag>
+      <video:tag>サイバー演歌</video:tag>
+      <video:tag>紅の恋路</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/pdOXGQIFzHE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title><![CDATA[恋☆紅葉 Music Video]]></video:title>
+      <video:description><![CDATA[花村紅の楽曲「恋☆紅葉」のミュージックビデオ。]]></video:description>
+      <video:player_loc>https://www.youtube.com/embed/pdOXGQIFzHE</video:player_loc>
+      <video:publication_date>2025-11-13</video:publication_date>
+      <video:tag>花村紅</video:tag>
+      <video:tag>サイバー演歌</video:tag>
+      <video:tag>恋☆紅葉</video:tag>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/D9I1wMPG95Y/hqdefault.jpg</video:thumbnail_loc>
+      <video:title><![CDATA[ライジング☆サン！ Music Video]]></video:title>
+      <video:description><![CDATA[花村紅の楽曲「ライジング☆サン！」の新年先行公開ミュージックビデオ。]]></video:description>
+      <video:player_loc>https://www.youtube.com/embed/D9I1wMPG95Y</video:player_loc>
+      <video:duration>255</video:duration>
+      <video:publication_date>2026-01-01</video:publication_date>
+      <video:tag>花村紅</video:tag>
+      <video:tag>サイバー演歌</video:tag>
+      <video:tag>ライジング☆サン！</video:tag>
+    </video:video>
   </url>
 </urlset>

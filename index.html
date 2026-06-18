@@ -61,6 +61,12 @@
             },
             {
               "@id": "https://jayz-ai.github.io/hanamura_hp/#kurenai-no-koiji"
+            },
+            {
+              "@id": "https://jayz-ai.github.io/hanamura_hp/#koi-momiji"
+            },
+            {
+              "@id": "https://jayz-ai.github.io/hanamura_hp/#rising-sun"
             }
           ],
           "primaryImageOfPage": {
@@ -79,7 +85,7 @@
             "Hanamura Beni"
           ],
           "url": "https://jayz-ai.github.io/hanamura_hp/",
-          "image": "https://jayz-ai.github.io/hanamura_hp/images/beni_hanamura_KV.jpg",
+          "image": "https://jayz-ai.github.io/hanamura_hp/images/ogp_hanamura_beni_1200x630.jpg",
           "description": "iTunes Store「演歌トップソング」日本2位を記録した、グラビア×サイバー演歌歌手。",
           "genre": [
             "サイバー演歌",
@@ -118,21 +124,97 @@
           ]
         },
         {
+          "@type": "MusicRecording",
+          "@id": "https://jayz-ai.github.io/hanamura_hp/#koi-momiji",
+          "name": "恋☆紅葉",
+          "url": "https://youtu.be/pdOXGQIFzHE",
+          "datePublished": "2025-11-13",
+          "inLanguage": "ja",
+          "byArtist": {
+            "@id": "https://jayz-ai.github.io/hanamura_hp/#artist"
+          },
+          "genre": [
+            "サイバー演歌",
+            "演歌",
+            "エレクトロニック"
+          ],
+          "sameAs": [
+            "https://youtu.be/pdOXGQIFzHE"
+          ]
+        },
+        {
+          "@type": "MusicRecording",
+          "@id": "https://jayz-ai.github.io/hanamura_hp/#rising-sun",
+          "name": "ライジング☆サン！",
+          "url": "https://youtu.be/D9I1wMPG95Y",
+          "datePublished": "2026-01-01",
+          "inLanguage": "ja",
+          "byArtist": {
+            "@id": "https://jayz-ai.github.io/hanamura_hp/#artist"
+          },
+          "genre": [
+            "サイバー演歌",
+            "演歌",
+            "エレクトロニック"
+          ],
+          "sameAs": [
+            "https://youtu.be/D9I1wMPG95Y"
+          ]
+        },
+        {
           "@type": "VideoObject",
           "@id": "https://jayz-ai.github.io/hanamura_hp/#kurenai-no-koiji-mv",
-          "name": "紅の恋路 Music Video",
-          "description": "花村紅のデビュー曲「紅の恋路」のミュージックビデオ。",
+          "name": "紅の恋路 Director's Cut Music Video",
+          "description": "花村紅のデビュー曲「紅の恋路」Director's Cutのミュージックビデオ。",
           "thumbnailUrl": [
-            "https://jayz-ai.github.io/hanamura_hp/images/ogp_hanamura_beni_1200x630.jpg"
+            "https://i.ytimg.com/vi/Cvyobrp3hOU/hqdefault.jpg"
           ],
-          "uploadDate": "2025-10-01",
+          "uploadDate": "2026-04-03",
           "duration": "PT4M50S",
           "url": "https://youtu.be/Cvyobrp3hOU?si=V7_KfilM-rf8Oe_V",
+          "embedUrl": "https://www.youtube.com/embed/Cvyobrp3hOU",
           "creator": {
             "@id": "https://jayz-ai.github.io/hanamura_hp/#artist"
           },
           "about": {
             "@id": "https://jayz-ai.github.io/hanamura_hp/#kurenai-no-koiji"
+          }
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://jayz-ai.github.io/hanamura_hp/#koi-momiji-mv",
+          "name": "恋☆紅葉 Music Video",
+          "description": "花村紅の楽曲「恋☆紅葉」のミュージックビデオ。",
+          "thumbnailUrl": [
+            "https://i.ytimg.com/vi/pdOXGQIFzHE/hqdefault.jpg"
+          ],
+          "uploadDate": "2025-11-13",
+          "url": "https://youtu.be/pdOXGQIFzHE",
+          "embedUrl": "https://www.youtube.com/embed/pdOXGQIFzHE",
+          "creator": {
+            "@id": "https://jayz-ai.github.io/hanamura_hp/#artist"
+          },
+          "about": {
+            "@id": "https://jayz-ai.github.io/hanamura_hp/#koi-momiji"
+          }
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://jayz-ai.github.io/hanamura_hp/#rising-sun-mv",
+          "name": "ライジング☆サン！ Music Video",
+          "description": "花村紅の楽曲「ライジング☆サン！」の新年先行公開ミュージックビデオ。",
+          "thumbnailUrl": [
+            "https://i.ytimg.com/vi/D9I1wMPG95Y/hqdefault.jpg"
+          ],
+          "uploadDate": "2026-01-01",
+          "duration": "PT4M15S",
+          "url": "https://youtu.be/D9I1wMPG95Y",
+          "embedUrl": "https://www.youtube.com/embed/D9I1wMPG95Y",
+          "creator": {
+            "@id": "https://jayz-ai.github.io/hanamura_hp/#artist"
+          },
+          "about": {
+            "@id": "https://jayz-ai.github.io/hanamura_hp/#rising-sun"
           }
         }
       ]
@@ -142,9 +224,16 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link id="font-stylesheet" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap">
+    <script>
+      window.addEventListener('load', () => {
+        const fontStylesheet = document.getElementById('font-stylesheet');
+        if (fontStylesheet) fontStylesheet.rel = 'stylesheet';
+      });
+    </script>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"></noscript>
     
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
     <!-- 白いシルクのような流れる背景と、花びらを降らせるキャンバス -->
@@ -163,6 +252,7 @@
                 <li><a href="#news">NEWS</a></li>
                 <li><a href="#profile">PROFILE</a></li>
                 <li><a href="#video">VIDEO</a></li>
+                <li><a href="#works">WORKS</a></li>
                 <li><a href="#music">MUSIC</a></li>
                 <li><a href="#goods">GOODS</a></li>
                 <li><a href="#gallery">GALLERY</a></li>
@@ -346,7 +436,7 @@
                                 <span class="mv-title-icon">▶</span> Music Video
                             </h3>
                             <div class="mv-video-wrapper image-frame">
-                                <video controls preload="metadata" poster="images/kurenai_no_koiji_poster_960.webp" width="1280" height="720">
+                                <video controls preload="none" poster="images/kurenai_no_koiji_poster_960.webp" width="1280" height="720">
                                     <source src="images/MVclip/紅の恋路_websiteカット.mp4" type="video/mp4">
                                     お使いのブラウザは動画再生に対応していません。
                                 </video>
@@ -361,6 +451,46 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-jp">作品</span>
+                    <span class="title-en">WORKS</span>
+                </h2>
+
+                <div class="works-grid">
+                    <article class="work-card" id="work-kurenai-no-koiji">
+                        <div class="work-meta">2025.10.17 配信開始 / 2026.04.03 Director's Cut公開</div>
+                        <h3 class="work-title">紅の恋路</h3>
+                        <p class="work-desc">iTunes Store「演歌トップソング」日本2位を記録した、花村紅のデビュー曲。</p>
+                        <div class="work-links">
+                            <a href="https://linkco.re/AvRQasue" target="_blank" rel="noopener noreferrer">LinkCore</a>
+                            <a href="https://youtu.be/Cvyobrp3hOU?si=V7_KfilM-rf8Oe_V" target="_blank" rel="noopener noreferrer">YouTube</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card" id="work-koi-momiji">
+                        <div class="work-meta">2025.11.13 公開</div>
+                        <h3 class="work-title">恋☆紅葉</h3>
+                        <p class="work-desc">アイドル性、演歌文脈、セクシーさを短い周期で見せる構成のミュージックビデオ。</p>
+                        <div class="work-links">
+                            <a href="https://youtu.be/pdOXGQIFzHE" target="_blank" rel="noopener noreferrer">YouTube</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card" id="work-rising-sun">
+                        <div class="work-meta">2026.01.01 先行公開</div>
+                        <h3 class="work-title">ライジング☆サン！</h3>
+                        <p class="work-desc">日の出と新年をテーマにした、別チャンネルでの先行公開ミュージックビデオ。</p>
+                        <div class="work-links">
+                            <a href="https://youtu.be/D9I1wMPG95Y" target="_blank" rel="noopener noreferrer">YouTube</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -469,7 +599,7 @@
     </footer>
 
     <!-- フット・スクリプト類 -->
-    <script src="js/particles.js"></script>
+    <script src="js/particles.js?v=2"></script>
     <script src="js/script.js?v=2"></script>
 
     <!-- News Modal -->
