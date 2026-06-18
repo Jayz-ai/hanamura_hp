@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
             const revealPoint = 150;
-            
+
             if (elementTop < windowHeight - revealPoint) {
                 el.classList.add('is-visible');
             }
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if(targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // 通常のbodyスクロールではなく、パララックスラッパー内のスクロール
@@ -67,6 +67,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const runWhenNearViewport = (element, callback) => {
+        let hasRun = false;
+        const run = () => {
+            if (hasRun) return;
+            hasRun = true;
+            callback();
+        };
+
+        if (!element || !('IntersectionObserver' in window)) {
+            run();
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries.some(entry => entry.isIntersecting)) {
+                observer.disconnect();
+                run();
+            }
+        }, {
+            rootMargin: '600px 0px'
+        });
+
+        observer.observe(element);
+    };
+
     // ==========================================
     // 音源販売画像のランダム表示処理
     // ==========================================
@@ -74,34 +99,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomMusicImg2 = document.getElementById('random-music-img-2');
     
     if (randomMusicImg1 && randomMusicImg2) {
-        // 画像リスト (music_01.jpg 〜 music_07.jpg)
-        const musicImages = [
-            'images/music_thmb/music_01.jpg',
-            'images/music_thmb/music_02.jpg',
-            'images/music_thmb/music_03.jpg',
-            'images/music_thmb/music_04.jpg',
-            'images/music_thmb/music_05.jpg',
-            'images/music_thmb/music_06.jpg',
-            'images/music_thmb/music_07.jpg'
-        ];
-        
-        // 重複しないように2つランダムに選択
-        const shuffled = [...musicImages].sort(() => 0.5 - Math.random());
-        const selectedImages = shuffled.slice(0, 2);
-        
-        // フワッと切り替えるためのスタイル処理
-        [randomMusicImg1, randomMusicImg2].forEach(img => {
-            img.style.transition = 'opacity 0.3s ease';
-            img.style.opacity = 0;
-        });
-        
-        setTimeout(() => {
-            randomMusicImg1.src = selectedImages[0];
-            randomMusicImg2.src = selectedImages[1];
+        runWhenNearViewport(randomMusicImg1.closest('.music-audio'), () => {
+            // 画像リスト (music_01.jpg 〜 music_07.jpg)
+            const musicImages = [
+                'images/music_thmb/music_01.jpg',
+                'images/music_thmb/music_02.jpg',
+                'images/music_thmb/music_03.jpg',
+                'images/music_thmb/music_04.jpg',
+                'images/music_thmb/music_05.jpg',
+                'images/music_thmb/music_06.jpg',
+                'images/music_thmb/music_07.jpg'
+            ];
+
+            // 重複しないように2つランダムに選択
+            const shuffled = [...musicImages].sort(() => 0.5 - Math.random());
+            const selectedImages = shuffled.slice(0, 2);
+
+            // フワッと切り替えるためのスタイル処理
+            [randomMusicImg1, randomMusicImg2].forEach(img => {
+                img.style.transition = 'opacity 0.3s ease';
+                img.style.opacity = 0;
+            });
             
-            randomMusicImg1.onload = () => randomMusicImg1.style.opacity = 1;
-            randomMusicImg2.onload = () => randomMusicImg2.style.opacity = 1;
-        }, 300);
+            setTimeout(() => {
+                randomMusicImg1.src = selectedImages[0];
+                randomMusicImg2.src = selectedImages[1];
+
+                randomMusicImg1.onload = () => randomMusicImg1.style.opacity = 1;
+                randomMusicImg2.onload = () => randomMusicImg2.style.opacity = 1;
+            }, 300);
+        });
     }
 
     // ==========================================
@@ -156,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        setupRandomGoods();
+        runWhenNearViewport(randomGoodsImg.closest('.goods'), setupRandomGoods);
     }
 
     // ==========================================

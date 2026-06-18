@@ -15,7 +15,7 @@ function generateNewsHtml(newsItems) {
     
     publicNews.forEach(item => {
         // [IMAGE: xxx.jpg] を <img> タグに置換 (images/ フォルダからの相対パスとみなす)
-        let contentHtml = item.content.replace(/\[IMAGE:\s*(.+?)\]/g, '<img src="images/$1" alt="image" class="news-modal-image">');
+        let contentHtml = item.content.replace(/\[IMAGE:\s*(.+?)\]/g, '<img src="images/$1" alt="NEWS image" class="news-modal-image" loading="lazy" decoding="async">');
         
         // テキストエリアの改行を <br> に変換
         contentHtml = contentHtml.replace(/\n/g, '<br>\n');

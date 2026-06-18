@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ffffff">
+    <link rel="preload" as="image" href="images/beni_hanamura_KV_mobile.webp" type="image/webp" media="(max-width: 768px)">
     
     <!-- OGP / Twitter Card for SEO -->
     <meta property="og:type" content="website">
@@ -139,7 +140,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
     <!-- 白いシルクのような流れる背景と、花びらを降らせるキャンバス -->
@@ -174,7 +175,7 @@
         <section id="hero" class="hero section parallax-container">
             <!-- 遠景レイヤー -->
             <div class="parallax-layer parallax-base">
-                <div class="hero-bg" style="background-image: url('images/beni_hanamura_KV.jpg');"></div>
+                <div class="hero-bg"></div>
             </div>
             
             <!-- 近景レイヤー（テキスト・装飾） -->
@@ -215,7 +216,7 @@
                             <div class="news-modal-date">2026.03.22</div>
                             <h3 class="news-modal-title">公式サイトオープンのお知らせ</h3>
                             <div class="news-modal-body">
-                                <img src="images/beni_hanamura_KV.jpg" alt="image" class="news-modal-image"><br>
+                                <img src="images/beni_hanamura_KV_mobile.webp" alt="花村紅 キービジュアル" class="news-modal-image" loading="lazy" decoding="async" width="900" height="1200"><br>
 花村紅の公式サイトをオープンいたしました！<br><br>
 最新情報や限定コンテンツを皆様にお届けしていきます。<br><br>
 今後とも花村紅の応援をよろしくお願いいたします🌸
@@ -256,7 +257,7 @@
                 <div class="profile-grid">
                     <div class="profile-image-col">
                         <div class="profile-image-wrapper image-frame">
-                            <img src="images/profile/profile.webp" alt="花村紅 プロフィール">
+                            <img src="images/profile/profile.webp" alt="花村紅 プロフィール" loading="lazy" decoding="async" width="1726" height="2301">
                         </div>
                     </div>
                     <div class="profile-text-col">
@@ -311,7 +312,7 @@
                                 <span class="mv-title-icon">▶</span> Music Video
                             </h3>
                             <div class="mv-video-wrapper image-frame">
-                                <video controls preload="metadata" poster="images/花村紅_カバーアート.jpg">
+                                <video controls preload="metadata" poster="images/kurenai_no_koiji_poster_960.webp" width="1280" height="720">
                                     <source src="images/MVclip/紅の恋路_websiteカット.mp4" type="video/mp4">
                                     お使いのブラウザは動画再生に対応していません。
                                 </video>
@@ -342,10 +343,10 @@
                     <a href="https://jayz-blutaz.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="goods-link-wrapper image-frame">
                         <div class="goods-images">
                             <div class="goods-img-col">
-                                <img id="random-music-img-1" src="images/music_thmb/music_01.jpg" alt="Music Thumbnail 1">
+                                <img id="random-music-img-1" src="images/music_thmb/music_01.jpg" alt="花村紅 音源サムネイル 1" loading="lazy" decoding="async" width="350" height="350">
                             </div>
                             <div class="goods-img-col">
-                                <img id="random-music-img-2" src="images/music_thmb/music_02.jpg" alt="Music Thumbnail 2">
+                                <img id="random-music-img-2" src="images/music_thmb/music_02.jpg" alt="花村紅 音源サムネイル 2" loading="lazy" decoding="async" width="350" height="350">
                             </div>
                         </div>
                     </a>
@@ -373,10 +374,10 @@
                     <a href="https://suzuri.jp/HanamuraBeni" target="_blank" rel="noopener noreferrer" class="goods-link-wrapper image-frame">
                         <div class="goods-images">
                             <div class="goods-img-col">
-                                <img src="images/goods/goods01.png" alt="グッズ固定">
+                                <img src="images/goods/goods01.png" alt="花村紅 公式グッズ" loading="lazy" decoding="async" width="1024" height="1024">
                             </div>
                             <div class="goods-img-col">
-                                <img id="random-goods-img" src="images/goods/goods02.png" alt="グッズランダム">
+                                <img id="random-goods-img" src="images/goods/goods02.png" alt="花村紅 公式グッズ ランダム表示" loading="lazy" decoding="async" width="1024" height="1024">
                             </div>
                         </div>
                     </a>
@@ -398,12 +399,12 @@
                 </h2>
                 
                 <div class="gallery-grid">
-                    <div class="gallery-item image-frame"><img src="images/gallery/gallery_01.webp" alt="Gallery 1"></div>
-                    <div class="gallery-item image-frame"><img src="images/gallery/gallery02.webp" alt="Gallery 2"></div>
-                    <div class="gallery-item image-frame"><img src="images/gallery/gallery03.webp" alt="Gallery 3"></div>
-                    <div class="gallery-item image-frame"><img src="images/gallery/gallery04.webp" alt="Gallery 4"></div>
-                    <div class="gallery-item image-frame"><img src="images/gallery/gallery05.webp" alt="Gallery 5"></div>
-                    <div class="gallery-item image-frame"><img src="images/gallery/gallery06.webp" alt="Gallery 6"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery_01.webp" alt="花村紅 ギャラリー 1" loading="lazy" decoding="async" width="800" height="1000"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery02.webp" alt="花村紅 ギャラリー 2" loading="lazy" decoding="async" width="800" height="1000"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery03.webp" alt="花村紅 ギャラリー 3" loading="lazy" decoding="async" width="800" height="1000"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery04.webp" alt="花村紅 ギャラリー 4" loading="lazy" decoding="async" width="800" height="1000"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery05.webp" alt="花村紅 ギャラリー 5" loading="lazy" decoding="async" width="800" height="1000"></div>
+                    <div class="gallery-item image-frame"><img src="images/gallery/gallery06.webp" alt="花村紅 ギャラリー 6" loading="lazy" decoding="async" width="800" height="1000"></div>
                 </div>
             </div>
         </section>
@@ -435,7 +436,7 @@
 
     <!-- フット・スクリプト類 -->
     <script src="js/particles.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=2"></script>
 
     <!-- News Modal -->
     <div id="news-modal" class="news-modal">
