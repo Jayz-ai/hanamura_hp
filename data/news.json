@@ -1,1 +1,30 @@
-[{"id":"news-1","date":"2026.04.15","title":"花村紅 1st VRライブ『紅の宴』開催決定！","content":"[IMAGE: gallery/gallery_01.webp]\nついに花村紅の1st VRライブの開催が決定しました！<br>\n最新のサイバー演歌の世界を、最前列の特等席で体感できるプレミアムな一夜となります。<br><br>\n特設サイトにてチケット先行予約受付中！<br>\n詳細は以下のリンクよりご確認ください。\n\n<a href=\"https://example.com/live\" target=\"_blank\" rel=\"noopener noreferrer\">https://example.com/live</a>","status":"archive"},{"id":"news-3","date":"2026.03.22","title":"公式サイトオープンのお知らせ","content":"[IMAGE: beni_hanamura_KV_mobile.webp]\n花村紅の公式サイトをオープンいたしました！<br>\n最新情報や限定コンテンツを皆様にお届けしていきます。<br>\n今後とも花村紅の応援をよろしくお願いいたします🌸","status":"public"},{"id":"news-2","date":"2025.10.17","title":"デビュー曲『紅の恋路』が各種ストリーミング配信開始","content":"グラビアアイドル×サイバー演歌の鮮烈なデビュー曲『紅の恋路』がSpotify, Apple Musicをはじめとする各種ストリーミングサービスで配信開始されました。<br>\n力強いビートと哀愁漂うコブシの融合をぜひお楽しみください。\n\n配信リンクはこちら：<br>\n<a href=\"https://linkco.re/AvRQasue\" target=\"_blank\" rel=\"noopener noreferrer\">LinkCore（配信プラットフォームリスト）</a>","status":"public"}]
+[
+  {
+    "id": "news-1",
+    "date": "2026.04.15",
+    "title": "花村紅 1st VRライブ『紅の宴』開催決定！",
+    "content": "[IMAGE: gallery/gallery_01.webp]\nついに花村紅の1st VRライブの開催が決定しました！<br>\n最新のサイバー演歌の世界を、最前列の特等席で体感できるプレミアムな一夜となります。<br><br>\n特設サイトにてチケット先行予約受付中！<br>\n詳細は以下のリンクよりご確認ください。\n\n<a href=\"https://example.com/live\" target=\"_blank\" rel=\"noopener noreferrer\">https://example.com/live</a>",
+    "status": "archive"
+  },
+  {
+    "id": "news-3",
+    "date": "2026.03.22",
+    "title": "公式サイトオープンのお知らせ",
+    "content": "[IMAGE: beni_hanamura_KV_mobile.webp]\n花村紅の公式サイトをオープンいたしました！<br>\n最新情報や限定コンテンツを皆様にお届けしていきます。<br>\n今後とも花村紅の応援をよろしくお願いいたします🌸",
+    "status": "public"
+  },
+  {
+    "id": "news-4",
+    "date": "2025.10.24",
+    "title": "『紅の恋路』MV制作ノートを公開しました",
+    "content": "デビュー曲『紅の恋路』のMV制作で使用したリップシンク動画生成AIと、実際の制作工程を解説したnote記事を公開しました。<br>\n花村紅の映像表現がどのように作られているかを紹介しています。\n\n記事はこちら：<br>\n<a href=\"https://note.com/shay_prinix/n/n3f71d41431b6\" target=\"_blank\" rel=\"noopener noreferrer\">4分50秒フルリップシンクMV制作noteを読む</a>",
+    "status": "public"
+  },
+  {
+    "id": "news-2",
+    "date": "2025.10.17",
+    "title": "デビュー曲『紅の恋路』が各種ストリーミング配信開始",
+    "content": "グラビアアイドル×サイバー演歌の鮮烈なデビュー曲『紅の恋路』がSpotify, Apple Musicをはじめとする各種ストリーミングサービスで配信開始されました。<br>\n力強いビートと哀愁漂うコブシの融合をぜひお楽しみください。\n\n配信リンクはこちら：<br>\n<a href=\"https://linkco.re/AvRQasue\" target=\"_blank\" rel=\"noopener noreferrer\">LinkCore（配信プラットフォームリスト）</a>",
+    "status": "public"
+  }
+]

@@ -7,6 +7,16 @@ const PORT = 8080;
 const DATA_FILE = path.join(__dirname, 'data', 'news.json');
 const INDEX_FILE = path.join(__dirname, 'index.html');
 
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    }[char]));
+}
+
 // ニュースオブジェクトからHTMLを組み立てる関数
 function generateNewsHtml(newsItems) {
     let html = '';
@@ -15,7 +25,8 @@ function generateNewsHtml(newsItems) {
     
     publicNews.forEach(item => {
         // [IMAGE: xxx.jpg] を <img> タグに置換 (images/ フォルダからの相対パスとみなす)
-        let contentHtml = item.content.replace(/\[IMAGE:\s*(.+?)\]/g, '<img src="images/$1" alt="NEWS image" class="news-modal-image" loading="lazy" decoding="async">');
+        const imageAlt = escapeHtml(item.title);
+        let contentHtml = item.content.replace(/\[IMAGE:\s*(.+?)\]/g, `<img src="images/$1" alt="${imageAlt}" class="news-modal-image" loading="lazy" decoding="async">`);
         
         // テキストエリアの改行を <br> に変換
         contentHtml = contentHtml.replace(/\n/g, '<br>\n');

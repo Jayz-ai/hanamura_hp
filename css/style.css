@@ -279,7 +279,7 @@ h1, h2, h3, h4 {
 .hero-bg {
     width: 100%;
     height: 100%;
-    background-image: url('../images/beni_hanamura_KV.jpg');
+    background-image: url('../images/beni_hanamura_KV_desktop.webp');
     background-size: cover;
     /* キャラの顔が上寄りに見えるよう調整 */
     background-position: center 15%;
@@ -509,6 +509,51 @@ h1, h2, h3, h4 {
 
 .detail-value {
     color: var(--color-text-main);
+}
+
+.official-links {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.official-links-title {
+    font-family: var(--font-cyber);
+    font-size: 0.8rem;
+    color: var(--color-botan-pink);
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+}
+
+.official-link-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.official-link-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid rgba(181, 19, 34, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-family: var(--font-cyber);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    transition: var(--transition-smooth);
+}
+
+.official-link-list a:hover {
+    color: #fff;
+    background: var(--color-botan-red);
+    border-color: var(--color-botan-red);
+    box-shadow: 0 8px 18px rgba(181, 19, 34, 0.2);
+    transform: translateY(-2px);
 }
 
 /* ==================================
@@ -767,7 +812,7 @@ h1, h2, h3, h4 {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../images/beni_image.jpg');
+    background-image: url('../images/beni_image_footer_desktop.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.1;
