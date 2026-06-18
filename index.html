@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ffffff">
-    <link rel="preload" as="image" href="images/beni_hanamura_KV_mobile.webp" type="image/webp" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="images/beni_hanamura_KV_mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
     
     <!-- OGP / Twitter Card for SEO -->
     <meta property="og:type" content="website">
@@ -233,7 +233,7 @@
     </script>
     <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"></noscript>
     
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
     <!-- 白いシルクのような流れる背景と、花びらを降らせるキャンバス -->
@@ -369,7 +369,10 @@
                 <div class="profile-grid">
                     <div class="profile-image-col">
                         <div class="profile-image-wrapper image-frame">
-                            <img src="images/profile/profile.webp" alt="花村紅 プロフィール" loading="lazy" decoding="async" width="1726" height="2301">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="images/profile/profile_960.webp" type="image/webp">
+                                <img src="images/profile/profile.webp" alt="花村紅 プロフィール" loading="lazy" decoding="async" width="1726" height="2301">
+                            </picture>
                         </div>
                     </div>
                     <div class="profile-text-col">
@@ -436,7 +439,7 @@
                                 <span class="mv-title-icon">▶</span> Music Video
                             </h3>
                             <div class="mv-video-wrapper image-frame">
-                                <video controls preload="none" poster="images/kurenai_no_koiji_poster_960.webp" width="1280" height="720">
+                                <video controls preload="none" poster="images/kurenai_no_koiji_poster_640.webp" width="1280" height="720">
                                     <source src="images/MVclip/紅の恋路_websiteカット.mp4" type="video/mp4">
                                     お使いのブラウザは動画再生に対応していません。
                                 </video>
@@ -599,7 +602,7 @@
     </footer>
 
     <!-- フット・スクリプト類 -->
-    <script src="js/particles.js?v=2"></script>
+    <script src="js/particles.js?v=3"></script>
     <script src="js/script.js?v=2"></script>
 
     <!-- News Modal -->

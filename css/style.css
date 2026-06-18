@@ -164,6 +164,12 @@ h1, h2, h3, h4 {
     display: block;
 }
 
+.image-frame picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 
 /* ヘッダーは常に白背景で固定（透明状態を廃止） */
 .header {
@@ -422,18 +428,20 @@ h1, h2, h3, h4 {
 .scroll-line::before {
     content: '';
     position: absolute;
-    top: -100%;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: var(--color-botan-red);
     box-shadow: 0 0 8px rgba(181, 19, 34, 0.8);
+    transform: translateY(-100%);
+    will-change: transform;
     animation: scrollLine 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
 }
 
 @keyframes scrollLine {
-    0% { top: -100%; }
-    100% { top: 100%; }
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
 
 /* ==================================
@@ -1148,6 +1156,10 @@ h1, h2, h3, h4 {
     .title-main { font-size: 2rem; }
     .gallery-grid { grid-template-columns: 1fr; }
     .nav { display: none; }
+
+    .silk-background {
+        animation: none;
+    }
 
     /* スマホではヘッダーが少し小さいので余白調整 */
     .main-content {

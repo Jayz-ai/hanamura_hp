@@ -4,18 +4,24 @@
 
 const canvas = document.getElementById('petal-canvas');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const PARTICLE_START_DELAY_MS = 12000;
 
 if (!canvas || prefersReducedMotion) {
     if (canvas) {
         canvas.style.display = 'none';
+        canvas.dataset.particlesState = 'disabled';
     }
 } else {
-const ctx = canvas.getContext('2d');
+let ctx = null;
 
-let width, height;
+let width = 0;
+let height = 0;
 let particles = [];
-let particleCount = window.innerWidth <= 768 ? 18 : 40; // 花びらの数
+let particleCount = getParticleCount(); // 花びらの数
 let animationFrameId = null;
+let fallbackTimerId = null;
+let hasStarted = false;
+canvas.dataset.particlesState = 'waiting';
 
 // 色のバリエーション（深紅〜ピンク）
 const colors = [
@@ -26,10 +32,14 @@ const colors = [
     'rgba(255, 180, 195, 0.6)'
 ];
 
+function getParticleCount() {
+    return window.innerWidth <= 768 ? 18 : 40;
+}
+
 function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
-    particleCount = window.innerWidth <= 768 ? 18 : 40;
+    particleCount = getParticleCount();
 }
 
 class Petal {
@@ -105,6 +115,8 @@ function init() {
 }
 
 function animate() {
+    if (!ctx) return;
+
     // 軌跡を残さず全体をクリア
     ctx.clearRect(0, 0, width, height);
 
@@ -117,7 +129,9 @@ function animate() {
 }
 
 window.addEventListener('resize', () => {
-    const nextCount = window.innerWidth <= 768 ? 18 : 40;
+    if (!hasStarted) return;
+
+    const nextCount = getParticleCount();
     resize();
     if (nextCount !== particles.length) {
         init();
@@ -125,6 +139,8 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener('visibilitychange', () => {
+    if (!hasStarted) return;
+
     if (document.hidden) {
         if (animationFrameId) {
             cancelAnimationFrame(animationFrameId);
@@ -138,7 +154,43 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// 初期化とアニメーション開始
-init();
-animate();
+function startParticles() {
+    if (hasStarted) return;
+
+    hasStarted = true;
+    canvas.dataset.particlesState = 'running';
+    if (fallbackTimerId) {
+        clearTimeout(fallbackTimerId);
+        fallbackTimerId = null;
+    }
+
+    ctx = canvas.getContext('2d');
+    init();
+    animate();
+}
+
+function startParticlesWhenIdle() {
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(startParticles, { timeout: 2000 });
+        return;
+    }
+
+    setTimeout(startParticles, 0);
+}
+
+function scheduleParticleStart() {
+    const triggerOptions = { passive: true, once: true };
+    window.addEventListener('scroll', startParticlesWhenIdle, triggerOptions);
+    window.addEventListener('pointerdown', startParticlesWhenIdle, triggerOptions);
+    window.addEventListener('touchstart', startParticlesWhenIdle, triggerOptions);
+    window.addEventListener('keydown', startParticlesWhenIdle, { once: true });
+
+    fallbackTimerId = setTimeout(startParticlesWhenIdle, PARTICLE_START_DELAY_MS);
+}
+
+if (document.readyState === 'complete') {
+    scheduleParticleStart();
+} else {
+    window.addEventListener('load', scheduleParticleStart, { once: true });
+}
 }
